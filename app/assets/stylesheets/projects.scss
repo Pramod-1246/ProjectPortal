@@ -1,0 +1,26 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.projects-container {
+    margin: 30px auto;
+}
+
+.projects-container > h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.card-custom {
+    margin-top: 40px;
+    background-color: rgba(34, 34, 233, 0.13);
+}
+
+.date-title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.card-body-custom {
+    text-align: center;
+}

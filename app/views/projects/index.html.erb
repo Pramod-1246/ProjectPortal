@@ -1,0 +1,40 @@
+<div class="projects-container">
+<h1>PROJECTS</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Porject instruction</th>
+      <th>On progress</th>
+      <th>Started on</th>
+      <th >Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @projects.each do |project| %>
+      <% if project.user_id == current_user.id || current_user.admin %>
+      <tr>
+        <td><%= project.project_name %></td>
+        <td><%= project.porject_description %></td>
+        <td><%= project.on_progress %></td>
+        <td><%= project.starts_on %></td>
+        <td><%= link_to 'Show', project,class: "btn btn-outline-primary btn-sm" %>
+        <% if @user.admin %>
+        <%= link_to 'Edit', edit_project_path(project), class: "btn btn-outline-primary btn-sm" %>
+        <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure to delete?' },class: "btn btn-outline-primary btn-sm" %>
+        <% end %>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @user.admin %>
+  <%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>
+<% end %>  
+</div>
